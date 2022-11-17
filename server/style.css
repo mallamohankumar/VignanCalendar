@@ -1,0 +1,131 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+body{
+    background: bisque;
+    display: flex;
+    justify-content: center;
+    height:100vh;
+    width:100%;
+}
+
+.posts-head{
+    margin:30px;
+}
+
+.posts{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width:90%;
+    background: white;
+}
+
+.post-container{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    /* background: grey; */
+    width:100%;
+    height:100%;
+}
+
+.post-list{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    /* background: green; */
+    list-style: none;
+    width:100%;
+}
+
+.post{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    /* background: red; */
+    width:80%;
+    margin-top:50px;
+    margin-bottom:50px;
+    border-radius: 10px;
+    border:2px solid black;
+    background: rgb(236,236,236);
+}
+
+.post .imgBx{
+    width:60px;
+    height:60px;
+    margin:10px;
+    border-radius: 20px;
+    border: 2px solid grey;
+}
+
+.post .imgBx img{
+    width:100%;
+    height:100%;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.post .content{
+    width:80%;
+    display: flex;
+    flex-direction: column;
+    padding:10px;
+}
+
+.post .content .author{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width:100%;
+    font-size: 25px;
+    margin:10px;
+}
+
+
+.post .content .main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* background: blue; */
+}
+
+.title{
+    margin:5px;
+    text-decoration: none;
+}
+
+.para{
+    margin:5px;
+}
+
+.buttons{
+    display: flex;
+    justify-content: space-between;
+    width:60%;
+    margin:5px;
+    
+}
+
+.edit{
+    width:50px;
+    height:20px;
+    background: green;
+    color:#fff;
+    text-decoration: none;
+    text-align: center;
+    border-radius:3px;
+}
+
+.delete{
+    width:50px;
+    height:20px;
+    background: red;
+    color:#fff;
+    text-decoration: none;
+    text-align: center;
+    border-radius:3px;
+}

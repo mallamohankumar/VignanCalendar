@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sample</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="posts">
+        <div class="posts-head">
+            <h1>Posts</h1>
+        </div>
+        <div class="post-container">
+            <ul class="post-list">
+                {% for post in object_list %}
+                    <li class="post">
+                        <div class="imgBx">
+                            {% if post.header_image %}
+                            <img src="{{post.author.profile.profile_pic.url}}"><br/><br/>
+                            {% else %}
+                            <img src="{% static 'myblog/images/elon.jpg' %}" alt="profile_pic">
+                            {% endif %}
+                        </div>
+                        <div class="content">
+                            <div class="author">
+                                <h6 class="heading">{{post.author.first_name}} {{post.author.last_name}} </h6>
+                                <h6 class="time">{{post.post_date}}</h6>
+                            </div>
+                            <hr>
+                            <div class="main">
+                                <a href="{% url 'article-detail' post.pk %}"> {{post.title}} </a> 
+                                <p class="para"> {{ post.snippet }} </p>
+                                {% if user.is_authenticated %} 
+                                {% if user.id == post.author.id %}
+                                <div class="buttons">
+                                    <a href="{% url 'update_post' post.pk %}" class="edit">Edit</a>
+                                    <a href="{% url 'delete_post' post.pk %}" class="delete">Delete</a>
+                                </div>
+                                {% endif %}
+                                {% endif %}
+                            </div>              
+                        </div>    
+                    </li>
+                    {% endfor %}
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
